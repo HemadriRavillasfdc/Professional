@@ -11,6 +11,7 @@
 /* ===========================================================
    GENERAL STYLES   
    ============================================================*/
+   @import url('https://fonts.googleapis.com/css2?family=Caveat&family=Poppins:wght@300&display=swap');
 body {
    font-family:'Open Sans', sans-serif;
     font-weight: 400;
@@ -91,7 +92,7 @@ p {
    ========================================================================== */
 
 #header-section {
-	background: url(../img/header.jpg) no-repeat center top;
+	background:#828181;
 	margin-top: -20px;
 	padding-top:20px;
 	text-align:center;
@@ -205,4 +206,18 @@ color: #FFFFFF;
     padding: 10px 30px 10px 30px;
 }
 
-
+.mytext{
+color: #fff;
+font-family:'Open Sans', sans-serif;
+font-weight: 700;
+font-size: 20px;
+line-height: 1.8;
+}
+.menutext{
+    height: 75px;
+    padding-top: 20px;
+    font-family: 'Open Sans';
+}
+.imagesize{
+    height: 200px;
+}
