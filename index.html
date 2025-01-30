@@ -1,306 +1,162 @@
 <!DOCTYPE html>
-<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
-<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!-->
 <html lang="en">
-<!--<![endif]-->
-<!-- HEAD SECTION -->
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <!--[if IE]>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <![endif]-->
-    <title>Hemadri Ravilla-Salesforce Developer</title>
-    <!--GOOGLE FONT -->
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <!--BOOTSTRAP MAIN STYLES -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet" />
-    <!--FONTAWESOME MAIN STYLE -->
-    <link href="assets/css/font-awesome.min.css" rel="stylesheet" />
-    <!--CUSTOM STYLE -->
-    <link href="assets/css/style.css" rel="stylesheet" />
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f0e6f6, #d4e4ff);
+            color: #222;
+            text-align: center;
+        }
+        nav {
+            background: #6a5acd;
+            padding: 10px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            transition: background 0.3s;
+        }
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            padding: 10px;
+            transition: background 0.3s, color 0.3s;
+        }
+        nav a.active {
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 5px;
+            color: #222;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 100px auto 50px;
+            padding: 20px;
+            position: relative;
+        }
+        .section {
+            position: relative;
+            background: rgba(255, 255, 255, 0.75);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        .section-content {
+            position: relative;
+            z-index: 2;
+        }
+        .about-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: left;
+        }
+        .about-section img {
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+        .about-section div {
+            flex: 1;
+        }
+        .certification img {
+            width: 80px;
+            height: 80px;
+            margin: 10px;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const sections = document.querySelectorAll(".section");
+            const navLinks = document.querySelectorAll("nav a");
+
+            function changeActiveSection() {
+                let index = sections.length;
+                while (--index && window.scrollY + 100 < sections[index].offsetTop) {}
+                navLinks.forEach((link) => link.classList.remove("active"));
+                if (navLinks[index]) {
+                    navLinks[index].classList.add("active");
+                }
+            }
+
+            window.addEventListener("scroll", changeActiveSection);
+        });
+    </script>
 </head>
-    <!--END HEAD SECTION -->
-<body>   
-     <!-- NAV SECTION -->
-    <div class="navbar navbar-inverse navbar-fixed-top ">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">Hemadri Ravilla</a>
+<body>
+    <nav>
+        <a href="#about">About</a>
+        
+        <a href="#projects">Projects</a>
+        <a href="#certifications">Certifications</a>
+        <a href="blog.html">Blog</a>
+        <a href="#contact">Contact Us</a>
+    </nav>
+    <div class="container">
+        <div class="section about-section" id="about">
+            <div class="section-content">
+                <img src="assets/img/team/hema.JPG" alt="Profile Picture">
+                <div>
+                    <h1>About Me</h1>
+                    <p>Hi, I'm Hemadri Ravilla, a Salesforce Developer with extensive experience in designing, developing, and deploying Salesforce applications. I specialize in Apex, Lightning Components, and automation to streamline business processes and enhance CRM functionality. Passionate about delivering scalable and innovative solutions, I continuously stay updated with the latest Salesforce trends and best practices.</p>
+                </div>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#header-section">HOME</a></li>
-                    <li><a href="#about-section">ABOUT</a></li>
-                    <li><a href="#products-section">RESUME</a></li>
-                    <li><a href="#contact-section">BLOG</a></li>
-                    <li><a href="#contact-section">CONTACT</a></li>
-                </ul>
+        </div>
+        <div class="section projects" id="projects">
+            <div class="section-content">
+                <h1>Projects</h1>
+                <div class="project">
+                    <h2>Project 1</h2>
+                    <p>Description of project 1.</p>
+                </div>
+                <div class="project">
+                    <h2>Project 2</h2>
+                    <p>Description of project 2.</p>
+                </div>
+                <div class="project">
+                    <h2>Project 3</h2>
+                    <p>Description of project 3.</p>
+                </div>
             </div>
-           
+        </div>
+        <div class="section certifications" id="certifications">
+            <div class="section-content">
+                <h1>Salesforce Certifications</h1>
+                <div class="certification"><img src="salesforce_logo.png" alt="Salesforce Associate"><p>Salesforce Associate (Jul 2023) - Credential ID: 3541455 - Skills: Reports and Dashboards</p></div>
+                <div class="certification"><img src="salesforce_logo.png" alt="Salesforce Certified Integration Architect"><p>Salesforce Certified Integration Architect (Sep 2022) - Credential ID: 2600108</p></div>
+                <div class="certification"><img src="salesforce_logo.png" alt="Salesforce Certified Service Cloud Consultant"><p>Salesforce Certified Service Cloud Consultant (Sep 2022) - Credential ID: 2545355</p></div>
+            </div>
+        </div>
+        <div class="section contact" id="contact">
+            <div class="section-content">
+                <h1>Contact Us</h1>
+                <form class="contact-form">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <input type="tel" name="phone" placeholder="Your Phone Number" required>
+                    <select name="subject" required>
+                        <option value="">Select Subject</option>
+                        <option value="general">General Inquiry</option>
+                        <option value="project">Project Collaboration</option>
+                        <option value="support">Support Request</option>
+                    </select>
+                    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
         </div>
     </div>
-     <!--END NAV SECTION -->
-     <!-- HEADER SECTION -->
-    <div id="header-section">
-        <div class="container">
-            <div class="row centered">
-                <div class="col-md-8 col-md-offset-2">
-                    <h1><strong> Hemadri Ravilla</strong>          
-                     
-                    </h1>
-                     <br /> <br /> <br />
-                    <h2>Senior Salesforce Developer</h2>
-                   <div class="mytext">
-                        
-                   </div >
-                     <br />
-                  <a href="#about-section">  <i class="fa fa-angle-double-down fa-5x down-icon"></i> </a>
-                </div>
-            </div>
-           
-        </div>
-       
-    </div> 
-      <!--END HEADER SECTION -->
-    <!--ABOUT SECTION -->
-    <div id="about-section" >
-        <div class="container" >
-            <div class="row main-top-margin text-center">
-                <div class="col-md-8 col-md-offset-2 " data-scrollreveal="enter top and move 100px, wait 0.3s">
-                    <h1>Who Am I ?</h1>
-                    <h4>
-                        Senior Salesforce Developer at IBM company. Current job profile includes Technical Lead and lead developer role for Salesforce based projects.
-                    </h4>
-                </div>
-            </div>
-            <!-- ./ Main Heading-->
-            <div class="row main-low-margin text-center">
-                <div class="col-md-3 " data-scrollreveal="enter left and move 100px, wait 0.4s">
-                    <img class="img-circle imagesize" src="assets/img/team/hema.JPG" alt="">
-                    <h4><strong>Hemadri Ravilla</strong> </h4>
-                    <p>
-                        Technical Lead Developer @ IBM Corp <br/> 11 X Salesforce certified
-
-                    </p>
-                    <p>
-                       <a href="linkedin.com/in/hemadriravilla"><i class="fa fa-facebook-square fa-2x color-facebook"></i></a>
-                        <a href="#"><i class="fa fa-twitter-square fa-2x color-twitter"></i></a>
-                        <a href="#"><i class="fa fa-google-plus-square fa-2x color-google-plus"></i></a>
-                        <a href="https://www.linkedin.com/in/hemadriravilla" target="_blank"><i class="fa fa-linkedin-square fa-2x color-linkedin"></i></a>
-                        <a href="#"><i class="fa fa-pinterest-square fa-2x color-pinterest"></i></a>
-
-                    </p>
-
-                </div>
-             
-                <div class="col-md-7 col-sm-7 col-md-offset-1  text-justify" data-scrollreveal="enter right and move 100px, wait 0.4s">
-                    <h3> Lorem ipsum dolor sit amet Riopsh</h3>
-                    <p>
-                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                         Curabitur nec nisl odio. Mauris vehicula at nunc id posuere.
-                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                         Curabitur nec nisl odio. Mauris vehicula at nunc id posuere.
-                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                         Curabitur nec nisl odio. Mauris vehicula at nunc id posuere.
-
-                    </p>
-                    <p>
-                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                         Curabitur nec nisl odio. Mauris vehicula at nunc id posuere.
-                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                         Curabitur nec nisl odio. Mauris vehicula at nunc id posuere.
-
-                    </p>
-                </div>
-            </div>
-              <!-- ./ Row Content-->
-        </div>
-    </div>
-    <!-- END ABOUT SECTION -->
-   
-   
-    <!--WORK/PRODUCTS SECTION -->
-    <div id="products-section" >
-         <div class="container" >
-            <div class="row main-top-margin text-center" data-scrollreveal="enter top and move 100px, wait 0.3s">
-                <div class="col-md-8 col-md-offset-2 ">
-                    <h1>Our Valuable Clients</h1>
-                    <h4>
-                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                         Curabitur nec nisl odio. Mauris vehicula at nunc id posuere.
-                    </h4>
-                </div>
-            </div>
-             <!-- ./ Main Heading-->
-             <hr />
-            <div class="row main-low-margin" >
-                <div class="col-md-10  col-md-offset-1 ">
- <div class="col-md-4 col-sm-4" data-scrollreveal="enter left and move 100px, wait 0.8s">
-                    <img src="assets/img/product/prd1.png" alt="">
-                </div>
-                <div class="col-md-8 " data-scrollreveal="enter right and move 100px, wait 0.4s">
-                    <h4 >  <strong class="color-red">Client Portfolio No # 1 </strong></h4>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                         Curabitur nec nisl odio. Mauris vehicula at nunc id posuere.
-                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                         Curabitur nec nisl odio. Mauris vehicula at nunc id posuere.
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                         Curabitur nec nisl odio. Mauris vehicula at nunc id posuere.
-                    </p>
-                    <p>
-                        <i class="fa fa-check"></i> Responsive Design<br />
-                     <i class="fa fa-check"></i> 24x7 Support <br />
-                       <i class="fa fa-check"></i> Well Documented<br />
-                    </p>
-                    <a href="#" class="btn btn-success" >See Live Demo</a>
-                </div>
-                </div>
-               
-            </div>
-            <!-- ./ Row Content-->
-            <hr />
-           <div class="row main-low-margin bottam-pad" >
-
-                 <div class="col-md-10  col-md-offset-1 ">
-                <div class="col-md-8 " data-scrollreveal="enter left and move 100px, wait 0.4s">
-                    <h4 >  <strong class="color-red">Client  Portfolio No # 2 </strong></h4>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                         Curabitur nec nisl odio. Mauris vehicula at nunc id posuere.
-                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                         Curabitur nec nisl odio. Mauris vehicula at nunc id posuere.
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                         Curabitur nec nisl odio. Mauris vehicula at nunc id posuere.
-                    </p>
-                    <p>
-                        <i class="fa fa-check"></i> Responsive Design<br />
-                     <i class="fa fa-check"></i> 24x7 Support <br />
-                       <i class="fa fa-check"></i> Well Documented<br />
-                    </p>
-                    <a href="#" class="btn btn-danger" > See Live Demo</a>
-                </div>
-                <div class="col-md-4 " data-scrollreveal="enter right and move 100px, wait 0.4s">
-                    
-                    <img class="img-margin-product" src="assets/img/product/prd1.png" alt="">
-                </div>
-                     </div>
-            </div>
-              <!-- ./ Row Content-->
-        </div>
-    </div>
-    <!--END WORK/PRODUCTS SECTION -->
-    <!--CONTACT SECTION -->
-    <div id="contact-section">
-        <div class="container" >
-            <div class="row main-top-margin text-center">
-                <div class="col-md-8 col-md-offset-2 " data-scrollreveal="enter top and move 100px, wait 0.3s">
-                    <h1>Reach Out</h1>
-                    
-                </div>
-            </div>
-            <!-- ./ Main Heading-->
-            <div class="row">
-                <div class="col-md-12  col-sm-12 ">
-                    <div class="col-md-6  " data-scrollreveal="enter left and move 100px, wait 0.4s">
-                        <h3> My Work Location</h3>
-                        <hr />
-                        <p>
-                        297, Turnpike Rd,<br />
-                        
-                        Westborough, Massachusetts, United States<br />                          
-                        Call: +1 7746414941<br />
-                        Email: hemadrirn@gmail.com<br />
-                            </p>
-                       
-                    </div>
-                    <div class="col-md-6  " data-scrollreveal="enter right and move 100px, wait 0.4s">
-                        <h3>Send me an Email </h3>
-                        <hr />
-                        <form>
-                            <div class="row">
-                                <div class="col-md-6 ">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" required="required" placeholder="Name">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" required="required" placeholder="Email address">
-                                    </div>
-                                </div>
-                            </div>
-                              <div class="row">
-                                <div class="col-md-6 ">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" required="required" placeholder="Subject">
-                                    </div>
-                                </div>
-                                <div class="col-md-6 ">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control"  placeholder="Ref. (IF any)">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12 ">
-                                    <div class="form-group">
-                                        <textarea name="message" id="message" required="required" class="form-control" rows="3"  placeholder="Message"></textarea>
-                                    </div>
-                                    <div class="form-group">
-                                        <button type="submit" class="btn btn-primary">Submit Request</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    
-                </div>
-            </div>
-             <!-- ./ Row Content-->
-        </div>
-    </div>  
-    <!--END CONTACT SECTION --> 
-    <!--FOOTER SECTION -->
-    <div id="footer">
-        <div class="container">
-            <div class="row ">
-                &copy; 2014 www.hemadriravilla.com | All Right Reserved 				
-		
-            </div>
-            
-        </div>
-       
-    </div>  
-    <!--END FOOTER SECTION --> 
-    <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
-    <!-- CORE JQUERY LIBRARY -->
-    <script src="assets/js/jquery.js"></script>
-    <!-- CORE BOOTSTRAP LIBRARY -->
-    <script src="assets/js/bootstrap.min.js"></script>
-     <!-- SCROLL REVEL LIBRARY FOR SCROLLING ANIMATIONS-->
-    <script src="assets/js/scrollReveal.js"></script>
-       <!-- CUSTOM SCRIPT-->
-    <script src="assets/js/custom.js"></script>
 </body>
 </html>
