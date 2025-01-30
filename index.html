@@ -1,28 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #f0e6f6, #d4e4ff);
-            color: #222;
+            background: linear-gradient(135deg, #e0f7fa, #ffebee);
+            color: #333;
             text-align: center;
         }
         nav {
-            background: #6a5acd;
-            padding: 10px;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            background: #607d8b;
+            padding: 15px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
             position: fixed;
             width: 100%;
             top: 0;
             left: 0;
             z-index: 1000;
-            transition: background 0.3s;
         }
         nav a {
             color: #ffffff;
@@ -33,34 +34,36 @@
             transition: background 0.3s, color 0.3s;
         }
         nav a.active {
-            background: rgba(255, 255, 255, 0.4);
+            background: #90a4ae;
             border-radius: 5px;
-            color: #222;
+            color: #ffffff;
         }
         .container {
-            max-width: 1000px;
-            margin: 100px auto 50px;
+            max-width: 1100px;
+            margin: 120px auto 50px;
             padding: 20px;
             position: relative;
         }
         .section {
             position: relative;
-            background: rgba(255, 255, 255, 0.75);
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
-            overflow: hidden;
+            text-align: left;
+            background: #e0e0e0;
         }
         .section-content {
             position: relative;
             z-index: 2;
         }
+        .about-section, .projects, .certifications, .contact {
+            background: #e0e0e0;
+        }
         .about-section {
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: left;
         }
         .about-section img {
             width: 200px;
@@ -76,8 +79,27 @@
             height: 80px;
             margin: 10px;
         }
+        .contact-form input, .contact-form textarea, .contact-form select {
+            width: 80%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .contact-form button {
+            background: #607d8b;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .contact-form button:hover {
+            background: #546e7a;
+        }
     </style>
-    <script>
+<script>
         document.addEventListener("DOMContentLoaded", function () {
             const sections = document.querySelectorAll(".section");
             const navLinks = document.querySelectorAll("nav a");
@@ -86,9 +108,7 @@
                 let index = sections.length;
                 while (--index && window.scrollY + 100 < sections[index].offsetTop) {}
                 navLinks.forEach((link) => link.classList.remove("active"));
-                if (navLinks[index]) {
-                    navLinks[index].classList.add("active");
-                }
+                navLinks[index].classList.add("active");
             }
 
             window.addEventListener("scroll", changeActiveSection);
@@ -98,7 +118,6 @@
 <body>
     <nav>
         <a href="#about">About</a>
-        
         <a href="#projects">Projects</a>
         <a href="#certifications">Certifications</a>
         <a href="blog.html">Blog</a>
@@ -114,32 +133,39 @@
                 </div>
             </div>
         </div>
-        <div class="section projects" id="projects">
+        <div class="section projects" style="text-align: center;" id="projects">
             <div class="section-content">
                 <h1>Projects</h1>
                 <div class="project">
-                    <h2>Project 1</h2>
-                    <p>Description of project 1.</p>
+                  <div class="project">
+                    <h2>Senior Salesforce Developer</h2>
+                    <p>CT Paid Leave · Contract</p>
+                    <p>Apr 2024 - Present · 10 mos</p>
+                    <p>United States · Remote</p>
+                   </div>
+                    <h2>Technical Lead</h2>
+                    <p>Nissan Extended Services North America · Contract</p>
+                    <p>Oct 2023 - Apr 2024 · 7 mos</p>
+                    <p>Franklin, Tennessee, United States · On-site</p>
                 </div>
-                <div class="project">
-                    <h2>Project 2</h2>
-                    <p>Description of project 2.</p>
-                </div>
-                <div class="project">
-                    <h2>Project 3</h2>
-                    <p>Description of project 3.</p>
-                </div>
+                
             </div>
         </div>
-        <div class="section certifications" id="certifications">
+        
+       
+    
+        <div class="section certifications" style="text-align: center;" id="certifications">
             <div class="section-content">
                 <h1>Salesforce Certifications</h1>
                 <div class="certification"><img src="salesforce_logo.png" alt="Salesforce Associate"><p>Salesforce Associate (Jul 2023) - Credential ID: 3541455 - Skills: Reports and Dashboards</p></div>
                 <div class="certification"><img src="salesforce_logo.png" alt="Salesforce Certified Integration Architect"><p>Salesforce Certified Integration Architect (Sep 2022) - Credential ID: 2600108</p></div>
                 <div class="certification"><img src="salesforce_logo.png" alt="Salesforce Certified Service Cloud Consultant"><p>Salesforce Certified Service Cloud Consultant (Sep 2022) - Credential ID: 2545355</p></div>
+                <div class="certification"><img src="salesforce_logo.png" alt="Salesforce Certified Application Architect"><p>Salesforce Certified Application Architect (Aug 2022) - Credential ID: 2503456</p></div>
+                <div class="certification"><img src="salesforce_logo.png" alt="Salesforce Certified Data Architect"><p>Salesforce Certified Data Architect (Aug 2022) - Credential ID: 2503455</p></div>
+                <div class="certification"><img src="salesforce_logo.png" alt="Salesforce Certified Sharing and Visibility Architect"><p>Salesforce Certified Sharing and Visibility Architect (Jul 2022) - Credential ID: 2431643</p></div>
             </div>
         </div>
-        <div class="section contact" id="contact">
+            <div class="section contact" style="text-align: center;" id="contact">
             <div class="section-content">
                 <h1>Contact Us</h1>
                 <form class="contact-form">
