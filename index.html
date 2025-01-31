@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +9,6 @@
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
             background: linear-gradient(135deg, #e0f7fa, #ffebee);
@@ -124,45 +124,62 @@
         <a href="#contact">Contact Us</a>
     </nav>
     <div class="container">
-        <div class="section about-section" id="about">
-            <div class="section-content">
-                <img src="assets/img/team/hema.JPG" alt="Profile Picture">
-                <div>
-                    <h1>About Me</h1>
-                    <p>Hi, I'm Hemadri Ravilla, a Salesforce Developer with extensive experience in designing, developing, and deploying Salesforce applications. I specialize in Apex, Lightning Components, and automation to streamline business processes and enhance CRM functionality. Passionate about delivering scalable and innovative solutions, I continuously stay updated with the latest Salesforce trends and best practices.</p>
-                </div>
+      <div class="section about-section" id="about" style="display: flex; align-items: center; justify-content: flex-start; text-align: left; gap: 25px; max-width: 1100px; margin: auto; margin-bottom: 50px;">
+        <div class="section-content" style="display: flex; align-items: center; justify-content: space-between; max-width: 900px; width: 100%; gap: 40px;">
+            <div style="display: flex; flex-direction: column; align-items: center;"> 
+            <img src="assets/img/team/hema.JPG" alt="Profile Picture" style="width: 200px; height: 200px; border-radius: 10px;"> 
+            <div style="margin-top: 10px;">
+                <a href="https://www.linkedin.com/in/hemadriravilla/" target="_blank">
+                    <img src="assets/img/team/Facebook_Logo_Primary.png" alt="LinkedIn" style="width: 30px; height: 30px; margin-right: 10px;">
+                </a>
+                <a href="https://www.facebook.com/rhnaidu/" target="_blank">
+                    <img src="assets/img/team/LI-In-Bug.png" alt="Facebook" style="width: 30px; height: 30px;">
+                </a>
             </div>
         </div>
-        <div class="section projects" style="text-align: center;" id="projects">
-            <div class="section-content">
-                <h1>Projects</h1>
-                <div class="project">
-                  <div class="project">
-                    <h2>Senior Salesforce Developer</h2>
-                    <p>CT Paid Leave · Contract</p>
-                    <p>Apr 2024 - Present · 10 mos</p>
-                    <p>United States · Remote</p>
-                   </div>
-                    <h2>Technical Lead</h2>
-                    <p>Nissan Extended Services North America · Contract</p>
-                    <p>Oct 2023 - Apr 2024 · 7 mos</p>
-                    <p>Franklin, Tennessee, United States · On-site</p>
-                </div>
-                
+            
+            <div style="flex: 1; text-align: left;"> <h1>About Me</h1>
+                <p>Hi, I'm Hemadri Ravilla, a Salesforce Developer with extensive experience in designing, developing, and deploying Salesforce applications. I specialize in Apex, Lightning Components, and automation to streamline business processes and enhance CRM functionality. Passionate about delivering scalable and innovative solutions, I continuously stay updated with the latest Salesforce trends and best practices.</p>
             </div>
         </div>
+    </div>
+    <div class="section projects" style="max-width: 1100px; margin: auto; display: flex; flex-direction: column; align-items: center; text-align: left; margin-bottom: 50px;" id="projects">
+      <div class="section-content">
+          <h1>Projects</h1>
+          <div class="project" style="display: flex; align-items: center; justify-content: flex-start; gap: 20px; margin-bottom: 30px;">
+              <img src="ct_paid_leave_logo.png" alt="CT Paid Leave Logo" style="width: 50px; height: 50px;">
+              <div>
+                  <h2>Senior Salesforce Developer</h2>
+                  <p>CT Paid Leave · Contract</p>
+                  <p>Apr 2024 - Present · 10 mos</p>
+                  <p>United States · Remote</p>
+              </div>
+          </div>
+          <div class="project" style="display: flex; align-items: center; justify-content: flex-start; gap: 20px; margin-bottom: 20px;">
+              <img src="nissan_logo.png" alt="Nissan Logo" style="width: 50px; height: 50px;">
+              <div>
+                  <h2>Technical Lead</h2>
+                  <p>Nissan Extended Services North America · Contract</p>
+                  <p>Oct 2023 - Apr 2024 · 7 mos</p>
+                  <p>Franklin, Tennessee, United States · On-site</p>
+              </div>
+  </div>
+          
+      </div>
+  </div>
         
        
     
-        <div class="section certifications" style="text-align: center;" id="certifications">
+        <div class="section certifications" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;" id="certifications">
             <div class="section-content">
                 <h1>Salesforce Certifications</h1>
-                <div class="certification"><img src="salesforce_logo.png" alt="Salesforce Associate"><p>Salesforce Associate (Jul 2023) - Credential ID: 3541455 - Skills: Reports and Dashboards</p></div>
-                <div class="certification"><img src="salesforce_logo.png" alt="Salesforce Certified Integration Architect"><p>Salesforce Certified Integration Architect (Sep 2022) - Credential ID: 2600108</p></div>
-                <div class="certification"><img src="salesforce_logo.png" alt="Salesforce Certified Service Cloud Consultant"><p>Salesforce Certified Service Cloud Consultant (Sep 2022) - Credential ID: 2545355</p></div>
-                <div class="certification"><img src="salesforce_logo.png" alt="Salesforce Certified Application Architect"><p>Salesforce Certified Application Architect (Aug 2022) - Credential ID: 2503456</p></div>
-                <div class="certification"><img src="salesforce_logo.png" alt="Salesforce Certified Data Architect"><p>Salesforce Certified Data Architect (Aug 2022) - Credential ID: 2503455</p></div>
-                <div class="certification"><img src="salesforce_logo.png" alt="Salesforce Certified Sharing and Visibility Architect"><p>Salesforce Certified Sharing and Visibility Architect (Jul 2022) - Credential ID: 2431643</p></div>
+                <div class="certification" style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;"><img src="salesforce_logo.png" style="width: 80px; height: 80px;" alt="Salesforce Associate"><p>Salesforce Associate (Jul 2023) - Credential ID: 3541455 - Skills: Reports and Dashboards</p></div>
+                <div class="certification" style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;"><img src="salesforce_logo.png" style="width: 80px; height: 80px;" alt="Salesforce Certified Integration Architect"><p>Salesforce Certified Integration Architect (Sep 2022) - Credential ID: 2600108</p></div>
+               <div class="certification" style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;"><img src="salesforce_logo.png" style="width: 80px; height: 80px;" alt="Salesforce Certified Application Architect"><p>Salesforce Certified Application Architect (Aug 2022) - Credential ID: 2503456</p></div>
+                <div class="certification" style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;"><img src="salesforce_logo.png" style="width: 80px; height: 80px;" alt="Salesforce Certified Data Architect"><p>Salesforce Certified Data Architect (Aug 2022) - Credential ID: 2503455</p></div>
+               <div class="certification" style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;"><img src="salesforce_logo.png" style="width: 80px; height: 80px;" alt="Salesforce Certified Sharing and Visibility Architect"><p>Salesforce Certified Sharing and Visibility Architect (Jul 2022) - Credential ID: 2431643</p></div>
+                <div class="certification" style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;"><img src="salesforce_logo.png" style="width: 80px; height: 80px;" alt="Salesforce Certified Integration Architect"><p>Salesforce Certified Integration Architect (Sep 2022) - Credential ID: 2600108</p></div>  
+              
             </div>
         </div>
             <div class="section contact" style="text-align: center;" id="contact">
